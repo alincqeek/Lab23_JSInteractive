@@ -15,51 +15,51 @@ const winConditions = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+
 cells.forEach((cell) => {
   cell.addEventListener("click", handleCellClick);
 });
 restartBtn.addEventListener("click", restartGame);
 function handleCellClick(event) {
   const cell = event.target;
-  const index = cell.gameActivebute("data-index");
+  const index = cell.getAttribute("data-index");
 
   if (board[index] !== "" || !gameActive) {
     return;
   }
   board[index] = currentPlayer;
   cell.textContent = currentPlayer;
-  checkRecult();
+  checkResult();
 }
-function checkRecult() {
-  let rondWon = false;
+function checkResult() {
+  let roundWon = false;
   for (let i = 0; i < winConditions.length; i++) {
     const [a, b, c] = winConditions[i];
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      rondWon = true;
+      roundWon = true;
       break;
     }
   }
 
-  if (rondWon){
-    statusTex.textContent=`Игрок ${currentPlayer} победил!`;
-    gameActive=false;
+  if (roundWon) {
+    statusTex.textContent = `Игрок ${currentPlayer} победил!`;
+    gameActive = false;
     return;
   }
-  if (!board.includes("")){
-    statusTex.textContent="Ничья!";
-    gameActive=false;
+  if (!board.includes("")) {
+    statusTex.textContent = "Ничья!";
+    gameActive = false;
     return;
   }
-  currentPlayer=currentPlayer==="X"? "O":"X";
-  statusTex.textContent=` Ход игрока: ${currentPlayer}`;
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
+  statusTex.textContent = ` Ход игрока: ${currentPlayer}`;
 }
-function restartGame(){
-    currentPlayer="X";
-    board = ["", "", "", "", "", "", "", "", ""];
-    gameActive=true;
-    statusTex.textContent="Ход игрока: X";
-    cells.forEach((cell)=>{
-        cell.textContent=""
-    })
+function restartGame() {
+  currentPlayer = "X";
+  board = ["", "", "", "", "", "", "", "", ""];
+  gameActive = true;
+  statusTex.textContent = "Ход игрока: X";
+  cells.forEach((cell) => {
+    cell.textContent = "";
+  });
 }
-
