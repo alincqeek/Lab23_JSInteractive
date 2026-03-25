@@ -3,13 +3,47 @@
   justify-content: center;
   width: 400px;
   height: 600px;
-  background-color: rgb(175, 183, 183);
+  background-color: rgb(117, 78, 197);
   border-radius: 40px;
-box-shadow: 12px 6px 10px 1px rgba(8, 8, 12, 0.2);
+  box-shadow: 12px 6px 10px 1px rgba(8, 8, 12, 0.2);
+  color: aliceblue;
+  font-size: 22px;
 }
 body {
   margin: 0;
   display: grid;
-  place-items: center; 
-  min-height: 100vh; 
+  place-items: center;
+  min-height: 100vh;
+}
+form {
+  display: grid;
+  grid-gap: 10px;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+label {
+  width: 80px; 
+}
+input {
+  flex: 1;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+button{
+    height: 50px;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: rgb(228, 234, 221);
+}
+.container {
+  display: flex;
+  gap: 20px; 
+  justify-content: center; 
+  flex-wrap: nowrap; 
 }

@@ -7,45 +7,50 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="container ">
     <div class="content">
-      <form>
-
-        <label for="name">Имя:</label>
-        <input
-          type="text"
-          id="name"
-          name="username"
-          placeholder="Введите ваше имя"
-        />
-
-
-        <label for="age">Возраст:</label>
-        <input
-          type="text"
-          id="age"
-          name="username"
-          placeholder="Введите ваш возраст"
-        />
-        
-        <label for="citi">Город:</label>
-        <input
-          type="text"
-          id="citi"
-          name="username"
-          placeholder="Введите ваш город:"
-          />
-          
-          <label for="hobbi">Xобби:</label>
+      <form id="profileForm">
+        <div class="form-group">
+          <label for="name">Имя:</label>
           <input
-          type="text"
-          id="hobbi"
-          name="username"
-          placeholder="Введите ваш хобби:"
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Введите ваше имя"
           />
-
-          <button id="clear">Очистить данные</button>
+        </div>
+        <div class="form-group">
+          <label for="age">Возраст:</label>
+          <input
+            type="text"
+            id="age"
+            name="age"
+            placeholder="Введите ваш возраст"
+          />
+        </div>
+        <div class="form-group">
+          <label for="city">Город:</label>
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="Введите ваш город"
+          />
+        </div>
+        <div class="form-group">
+          <label for="hobby">Хобби:</label>
+          <input
+            type="text"
+            id="hobby"
+            name="hobby"
+            placeholder="Введите ваш хобби"
+          />
+        </div>
+        <button type="button" id="clear">Очистить данные</button>
       </form>
     </div>
+    <div class="content"></div>
+    </div>
+    <script src="main.js"></script>
   </body>
-  <script src="main.js"></script>
 </html>
